@@ -36,7 +36,7 @@ function Login() {
                 console.log(error);
 
                 if (error.response) {
-                    alert(error.response.data.message);
+                    alert(error.response.data?.message || "Login failed");
                 } else {
                     alert("Backend server is not running");
                 }

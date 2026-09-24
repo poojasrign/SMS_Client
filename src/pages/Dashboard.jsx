@@ -12,8 +12,7 @@ function Dashboard() {
         getStudents()
             .then((response) => {
 
-                setStudents(response.data);
-
+                setStudents(Array.isArray(response.data) ? response.data : response.data.students || []);
             })
             .catch((error) => {
 
